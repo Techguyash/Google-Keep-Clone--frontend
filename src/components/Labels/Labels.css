@@ -1,0 +1,80 @@
+.labels {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.label_modal {
+  width: 300px;
+  background-color: whitesmoke;
+  height: 175px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+.label_modal_title {
+  display: flex;
+  padding-left: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 15%;
+  margin-left: 10px;
+  font-weight: 500;
+}
+.label_modal_content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+  height: 40%;
+  background-color: whitesmoke;
+  border-bottom: 0.3px solid rgb(204, 194, 194);
+}
+.label_modal_content input {
+  width: 207px;
+  height: 35px;
+  font-size: 15px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid gainsboro;
+  background-color: whitesmoke;
+  display: flex;
+}
+
+.label__icon {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.label_modal_footer {
+  width: 60%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 65px;
+}
+.label_footer_content {
+  display: flex;
+  width: 55px;
+  height: 30px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.label_footer_content:hover {
+  background-color: rgba(214, 212, 212, 0.75);
+}

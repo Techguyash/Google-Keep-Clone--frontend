@@ -1,0 +1,7 @@
+.archive {
+  display: flex;
+  flex-direction: column;
+  width: 78vw;
+  overflow: hidden;
+  height: 89vh;
+}

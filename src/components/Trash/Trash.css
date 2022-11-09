@@ -1,0 +1,49 @@
+.trash {
+  display: flex;
+  flex-direction: column;
+  width: 78vw;
+  overflow: hidden;
+  height: 89vh;
+}
+.trash_message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  height: fit-content;
+  font-weight: 200;
+  font-size: 17px;
+  font-style: italic;
+  color: black;
+  margin-bottom: 30px;
+  margin-top: 25px;
+}
+.empty_trash_text {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 200;
+  color: #1a73e8;
+  margin-left: 20px;
+  font-weight: 600;
+  height: 35px;
+  width: 100px;
+  padding: 2px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  cursor: pointer;
+}
+.empty_trash_text:hover {
+  background-color: #ebf2fa;
+}
+.trash_showData {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-left: 8px;
+  z-index: 2;
+}

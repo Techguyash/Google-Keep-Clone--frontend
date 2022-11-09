@@ -1,0 +1,23 @@
+.notes-empty-content {
+  display: flex;
+  width: 100%;
+  height: 90%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  gap: 10px;
+}
+.notes-ico {
+  font-size: 120px;
+  color: #e6e6e6;
+}
+.notes-empty-text {
+  font-weight: 400;
+  color: #80868b;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+}
+
+.hide {
+  display: none !important;
+}
