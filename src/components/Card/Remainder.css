@@ -1,0 +1,68 @@
+.Remainder_body {
+  background-color: white;
+  border: 2px solid rgb(224, 222, 222);
+  width: 20rem;
+  height: 14.5rem;
+  z-index: 3;
+  position: absolute;
+  border-radius: 5px;
+}
+.Remainder_title {
+  margin: 6px 6px !important;
+  width: 90%;
+  margin: auto;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 0.5em;
+}
+
+.Remainder_title span {
+  color: #3c4043;
+  font-size: 13px;
+  font-family: "Roboto", arial, sans-serif;
+  font-weight: 400;
+}
+.Remainder_menu {
+  margin: 8px 6px !important;
+  margin: auto;
+  color: #3c4043;
+  font-size: 12px;
+  font-family: "Roboto", arial, sans-serif;
+  font-weight: lighter;
+  padding: 0.5em;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Remainder_menu:hover {
+  background-color: #eaeef0;
+}
+
+.Remainder_menu_ico {
+  margin: 8px 6px !important;
+  margin: auto;
+  font-size: 13px;
+  font-family: "Roboto", arial, sans-serif;
+  font-weight: lighter;
+  padding: 0.5em;
+  font-weight: 200;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.8em;
+}
+
+.Remainder_menu_ico:hover {
+  background-color: #eaeef0;
+}
+.rem_ico {
+  font-size: 18px !important;
+}
+
+.rem_ico_fill {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+}

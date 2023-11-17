@@ -26,8 +26,6 @@ const Notes = (props) => {
         title: inpTitle,
         content: content,
       };
-
-      // console.log(data);
       axios
         .post("/", data)
         .then((res) => {
@@ -55,8 +53,8 @@ const Notes = (props) => {
     axios
       .get("/")
       .then((res) => {
-        console.log(res.data.data);
-        setnotesList(res.data.data);
+        // console.log("🚀 ~ file: Notes.js:63 ~ .then ~ res.data:", res.data)
+        setnotesList(res.data);
       })
       .catch((err) => {
         setError(err.message);
@@ -65,7 +63,19 @@ const Notes = (props) => {
 
   function moveCardToTrashHandler(id) {
     axios
-      .delete(`/trash/${id}`)
+      .delete(`trash/${id}`)
+      .then((res) => {
+        console.log(res);
+        fetchDatafromAPI();
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+
+  function moveToArchiveHandler(id) {
+    axios
+      .put(`archive/${id}`)
       .then((res) => {
         console.log(res);
         fetchDatafromAPI();
@@ -86,6 +96,7 @@ const Notes = (props) => {
               key={data.id}
               id={data.id}
               moveCardToTrashHandler={moveCardToTrashHandler}
+              moveToArchiveHandler={moveToArchiveHandler}
             />
           );
         })}
@@ -111,7 +122,7 @@ const Notes = (props) => {
         )}
       </div>
       <div className={`notes-footer`} onClick={toggleEditStateHandler}>
-        {notesList.length < 1 ? (
+        {notesList == null || notesList.length < 1 ? (
           <EmptyForm
             icon={props.icon}
             notesList={notesList}
@@ -126,11 +137,3 @@ const Notes = (props) => {
 };
 
 export default Notes;
-
-// <>
-// {!error ? (
-//   <LoadedData />
-// ) : (
-//   <h1 style={errorStyle}>{error}, Please try after Sometimes</h1>
-// )}
-// </>

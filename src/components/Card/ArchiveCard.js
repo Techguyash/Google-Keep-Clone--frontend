@@ -2,34 +2,19 @@ import React, { useState } from "react";
 import "./Card.css";
 import Menu from "./Menu";
 import axios from "../axios";
-import RemainderMenu from "./RemainderMenu";
 
-const Card = (props) => {
+const ArchiveCard = (props) => {
   const [hoverShow, sethoverShow] = useState(false);
   const [menuVisibility, setmenuVisibility] = useState(false);
-  const [remainderMenuVisibile, setRemainderMenuVisible] = useState(false);
 
-  function enableRemainderMenuShowhandler() {
-    setRemainderMenuVisible(true);
-  }
-  function disableRemainderMenuShowhandler() {
-    if (!remainderMenuVisibile) {
-      setRemainderMenuVisible(false);
-    }
-  }
-
-  function enableMenuShowhandler() {
+  function enableHoverShowhandler() {
     sethoverShow(true);
   }
 
-  function disableMenuShowhandler() {
-    if (!menuVisibility && !remainderMenuVisibile) {
+  function disableHoverShowhandler() {
+    if (!menuVisibility) {
       sethoverShow(false);
     }
-  }
-  function toggleRemainderMenuVisibilityHandler() {
-    setRemainderMenuVisible(!remainderMenuVisibile);
-    sethoverShow(!hoverShow);
   }
 
   function toggleMenuVisibilityHandler() {
@@ -40,8 +25,8 @@ const Card = (props) => {
   return (
     <div
       className="card"
-      onMouseOver={enableMenuShowhandler}
-      onMouseLeave={disableMenuShowhandler}
+      onMouseOver={enableHoverShowhandler}
+      onMouseLeave={disableHoverShowhandler}
     >
       <div
         className={`card_top ${!hoverShow && "hide"}
@@ -64,14 +49,10 @@ const Card = (props) => {
 
       <div className={`card_footer ${!hoverShow && "hide"}`}>
         <div className="card_box_icon">
-          <div
-            className="card_btm_div"
-            onClick={toggleRemainderMenuVisibilityHandler}
-          >
+          <div className="card_btm_div">
             <span className="material-symbols-outlined ml_ico nav_icon">
               add_alert
             </span>
-            {remainderMenuVisibile && <RemainderMenu></RemainderMenu>}
           </div>
           <div className="card_btm_div">
             <span className="material-symbols-outlined ml_ico nav_icon">
@@ -90,12 +71,10 @@ const Card = (props) => {
           </div>
           <div
             className="card_btm_div"
-            onClick={() => {
-              props.moveToArchiveHandler(props.id);
-            }}
+            onClick={() => props.unArchiveNotesHandler(props.id)}
           >
             <span className="material-symbols-outlined ml_ico nav_icon">
-              archive
+              unarchive
             </span>
           </div>
           <div className="card_btm_div" onClick={toggleMenuVisibilityHandler}>
@@ -117,4 +96,4 @@ const Card = (props) => {
   );
 };
 
-export default Card;
+export default ArchiveCard;

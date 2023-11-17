@@ -24,7 +24,7 @@ const Trash = () => {
 
   function restoreDeletedNote(id) {
     axios
-      .put(`/trash/${id}`)
+      .put(`/trash/restore/${id}`)
       .then((res) => {
         fetchDatafromAPI();
       })
@@ -48,8 +48,7 @@ const Trash = () => {
     axios
       .get("/trash")
       .then((res) => {
-        // console.log(res.data.data);
-        setTrashList(res.data.data);
+        setTrashList(res.data);
       })
       .catch((err) => {});
   }
@@ -65,7 +64,7 @@ const Trash = () => {
           Notes in Trash are deleted after 7 days.{" "}
           <span className="empty_trash_text">Empty Trash</span>
         </h3>
-        {trashList.length < 1 ? (
+        {trashList == undefined ? (
           <EmptyForm icon="delete" notesList={[]} content="No notes in Trash" />
         ) : (
           <div className="trash_showData">{createDeleteCards()}</div>
