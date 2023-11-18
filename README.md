@@ -5,7 +5,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Azure Entra ID is implemented for Oauth2 Authentication
 
 ## `System Architecture`
-(https://github.com/Techguyash/Google-Keep-Clone--frontend/blob/master/systemArch.png)
+![Screen 1](https://github.com/Techguyash/Google-Keep-Clone--frontend/blob/master/systemArch.png)
+()
 
 
 ## Available Scripts
