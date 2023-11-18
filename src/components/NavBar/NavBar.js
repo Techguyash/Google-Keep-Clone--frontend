@@ -1,8 +1,28 @@
 import React from "react";
 import "./NavBar.css";
 import keep from "../../assets/Google_Keep_icon.svg";
+import { SignInButton } from "../Auth/SignInButton";
+import { useIsAuthenticated } from "@azure/msal-react";
+import { SignOutButton } from "../Auth/SignOutButton";
+import { useMsal } from "@azure/msal-react";
 
 const NavBar = (props) => {
+  const { instance } = useMsal();
+
+  const isAuthenticated = useIsAuthenticated();
+  const handleLogout = (logoutType) => {
+    if (logoutType === "popup") {
+      instance.logoutPopup({
+        postLogoutRedirectUri: "/",
+        mainWindowRedirectUri: "/",
+      });
+    } else if (logoutType === "redirect") {
+      instance.logoutRedirect({
+        postLogoutRedirectUri: "/",
+      });
+    }
+  };
+
   return (
     <div className="navBar">
       <div className="left">
@@ -33,6 +53,16 @@ const NavBar = (props) => {
       <div className="right">
         <div className="right-01">
           <ul>
+            <li>
+              {isAuthenticated && (
+                <span
+                  class="material-symbols-outlined nav_icon"
+                  onClick={() => handleLogout("redirect")}
+                >
+                  logout
+                </span>
+              )}
+            </li>
             <li>
               <span className="material-symbols-outlined size-9 nav_icon">
                 refresh

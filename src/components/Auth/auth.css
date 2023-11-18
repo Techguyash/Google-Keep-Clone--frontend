@@ -1,0 +1,38 @@
+.Auth_header {
+  background-color: rgba(158, 245, 245, 0.544);
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(17, 237, 164);
+}
+.Auth_logo {
+  height: 70px;
+  width: 180px;
+  margin: 20px;
+}
+
+.Auth_logo_desc {
+  margin: 20px;
+}
+
+.Auth_center {
+  background-color: rgb(217, 248, 248);
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.Auth_Button {
+  background-color: blue;
+  border: none;
+  outline: none;
+  height: 3em;
+  width: 12em;
+  margin: 10px;
+  color: white;
+}
